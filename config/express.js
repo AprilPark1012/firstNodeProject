@@ -5,9 +5,12 @@ module.exports = function() {
 	console.log('init express...');
 	var app = express();
 
-	require('../app/routes/news.server.routes')(app);
+	app.use(bodyParser.json()); // for parsing application/json
+	app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-	app.use(bodyParser.json());
+	app.use(express.static('./public'));
+
+	require('../app/routes/news.server.routes')(app);
 
 	app.use(function(req, res, next){
 		res.status(404);

@@ -3,11 +3,6 @@ var News = mongoose.model('News');
 
 module.exports = {
 	create: function(req, res, next){
-		console.log("req.body: "+req.body);
-		// var title = req.body.title;
-	 //  var content = req.body.content;
-	 //  var author = req.body.author;
-	 //  var news = new News(title, content, author)
 		var news = new News(req.body);
 		news.save(function(err){
 			if(err) return next(err);
@@ -29,16 +24,13 @@ module.exports = {
 
 			return res.json(docs);
 		});
-
 	},
 
 	getById: function(req, res, next, id){
 		if(!id) return next(new Error('News Not Found, id= ' + id));
 
-		console.log("id: " + id);
-
 		News
-		.findOne({"_id": id})
+		.findOne({"_id":ObjectId(id)})
 		.exec(function(err, docs){
 			if(err) return next(err);
 			if(!docs) return next(new Error('News Not Found, docs=' + docs));
