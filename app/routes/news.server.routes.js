@@ -5,7 +5,7 @@ module.exports = function(app){
 		.get(NewsController.list)
 		.post(NewsController.create);
 
-	app.route('news/:nid')
+	app.route('/news/:nid')
 		.get(NewsController.get);
 
 	app.param('nid', 	NewsController.getById);

@@ -29,8 +29,10 @@ module.exports = {
 	getById: function(req, res, next, id){
 		if(!id) return next(new Error('News Not Found, id= ' + id));
 
+		// var id = parseInt(id);
+
 		News
-		.findOne({"_id":ObjectId(id)})
+		.findOne({"id":id})
 		.exec(function(err, docs){
 			if(err) return next(err);
 			if(!docs) return next(new Error('News Not Found, docs=' + docs));
