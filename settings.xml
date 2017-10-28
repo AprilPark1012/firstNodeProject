@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<localRepository>D:\\repository</localRepository>
+	<pluginGroups>
+	</pluginGroups>
+	<proxies>
+	</proxies>
+
+	<servers>
+
+	</servers>
+	<!---配置国内静态源 -->
+	<mirrors>
+		<mirror>
+			<id>mirrors.ibiblio.org</id>
+			<name>mirrors.ibiblio.org</name>
+			<url>http://repo1.maven.org/maven2/ </url>
+			<mirrorOf>central</mirrorOf>
+		</mirror>
+		<mirror>
+			<id>mirrors.ibiblio.org</id>
+			<name>mirrors.ibiblio.org</name>
+			<url>http://mirrors.ibiblio.org/maven2/</url>
+			<mirrorOf>central2</mirrorOf>
+		</mirror>
+		<mirror>
+			<id>nexus-tmatesoft</id>
+			<mirrorOf>central3</mirrorOf>
+			<name>Nexus tmatesoft</name>
+			<url>http://maven.tmatesoft.com/content/groups/public/</url>
+		</mirror>
+		<mirror>
+			<id>CN</id>
+			<name>OSChina Central</name>
+			<url>http://maven.oschina.net/content/groups/public/</url>
+			<mirrorOf>central4</mirrorOf>
+		</mirror>
+
+		<mirror>
+			<id>repo2</id>
+			<mirrorOf>central5</mirrorOf>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://repo2.maven.org/maven2/</url>
+		</mirror>
+		<mirror>
+			<id>net-cn</id>
+			<mirrorOf>central6</mirrorOf>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://maven.net.cn/content/groups/public/</url>
+		</mirror>
+		<mirror>
+			<id>ui</id>
+			<mirrorOf>central7</mirrorOf>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://uk.maven.org/maven2/</url>
+		</mirror>
+		<mirror>
+			<id>ibiblio</id>
+			<mirrorOf>central8</mirrorOf>
+			<name>Human Readable Name for this Mirror.</name>
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2/</url>
+		</mirror>
+		<mirror>
+			<id>jboss-public-repository-group</id>
+			<mirrorOf>central9</mirrorOf>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public</url>
+		</mirror>
+
+
+		<mirror>
+			<id>JBossJBPM</id>
+			<mirrorOf>central10</mirrorOf>
+			<name>JBossJBPM Repository</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases/</url>
+		</mirror>
+
+	</mirrors>
+	<profiles>
+		<profile>
+			<id>jdk-1.7</id>
+			<activation>
+				<jdk>1.7</jdk>
+			</activation>
+			<repositories>
+				<repository>
+					<id>repo</id>
+					<name>repo</name>
+					<url>http://repo1.maven.org/maven2/</url>
+					<layout>default</layout>
+					<snapshotPolicy>always</snapshotPolicy>
+				</repository>
+				<repository>
+					<id>jboss</id>
+					<name>jboss</name>
+					<url>http://repository.jboss.com/maven2/</url>
+					<layout>default</layout>
+					<snapshotPolicy>always</snapshotPolicy>
+				</repository>
+				<repository>
+					<id>sona</id>
+					<name>sona</name>
+					<url>http://repository.sonatype.org/content/groups/public/ </url>
+					<layout>default</layout>
+					<snapshotPolicy>always</snapshotPolicy>
+				</repository>
+			</repositories>
+		</profile>
+	</profiles>
+
+</settings>

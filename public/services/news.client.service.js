@@ -16,6 +16,7 @@ function NewsService($http, $q){
 			config.params = data;
 		}
 
+		// 这个方法已经过期。。。。
 		// $http(config).success(function(data){
 		// 	defered.resolve(data);
 		// }).error(function(err){
